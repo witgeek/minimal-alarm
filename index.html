@@ -7,25 +7,39 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="clock" id="clock">00:00:00</div>
-
-    <div class="alarm-section">
-      <div class="alarm-label">ALARM</div>
-      <input type="time" id="alarm-time" class="alarm-input">
-
-      <button id="toggle-btn" class="btn btn-set">SET</button>
-
-      <div id="alarm-status" class="alarm-status hidden">
-        <span class="status-dot"></span>
-        <span id="status-text">00:00</span>
+  <div class="card">
+    <div class="ring-wrap">
+      <svg class="ring-svg" viewBox="0 0 220 220">
+        <circle class="ring-track" cx="110" cy="110" r="104"/>
+        <circle class="ring-progress" id="ring" cx="110" cy="110" r="104"/>
+      </svg>
+      <div class="clock-center">
+        <div class="clock" id="clock">00:00:00</div>
+        <div class="date-label" id="date-label"></div>
       </div>
     </div>
 
-    <div id="ringing-overlay" class="ringing-overlay hidden">
-      <div class="ringing-text">ALARM!</div>
-      <button id="dismiss-btn" class="btn btn-dismiss">DISMISS</button>
+    <div class="alarm-section">
+      <div class="section-label">alarm</div>
+
+      <div class="input-row">
+        <span class="input-icon">⏰</span>
+        <input type="time" id="alarm-time" class="alarm-input">
+      </div>
+
+      <button id="toggle-btn" class="btn btn-set">SET ALARM</button>
+
+      <div id="alarm-badge" class="alarm-badge hidden">
+        <span class="badge-dot"></span>
+        <span id="badge-text">set for 00:00</span>
+      </div>
     </div>
+  </div>
+
+  <div id="ringing-overlay" class="ringing-overlay hidden">
+    <div class="ringing-ring">⏰</div>
+    <div class="ringing-label">ALARM</div>
+    <button id="dismiss-btn" class="btn-dismiss">DISMISS</button>
   </div>
 
   <script src="script.js"></script>
