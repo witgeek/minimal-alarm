@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alarm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="clock" id="clock">00:00:00</div>
+
+    <div class="alarm-section">
+      <div class="alarm-label">ALARM</div>
+      <input type="time" id="alarm-time" class="alarm-input">
+
+      <button id="toggle-btn" class="btn btn-set">SET</button>
+
+      <div id="alarm-status" class="alarm-status hidden">
+        <span class="status-dot"></span>
+        <span id="status-text">00:00</span>
+      </div>
+    </div>
+
+    <div id="ringing-overlay" class="ringing-overlay hidden">
+      <div class="ringing-text">ALARM!</div>
+      <button id="dismiss-btn" class="btn btn-dismiss">DISMISS</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
